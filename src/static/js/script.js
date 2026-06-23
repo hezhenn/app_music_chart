@@ -1,7 +1,6 @@
 function getSongsFromDom() {
     const list = document.getElementById("song_list");
     if (!list) return null;
-
     const items = Array.from(list.querySelectorAll("li"))
         .map(li => li.textContent.trim())
         .filter(Boolean);
@@ -18,6 +17,7 @@ function getSongsFromStorage() {
     }
     return null;
 }
+
 
 function loadSongs() {
     const fromDom = getSongsFromDom();
@@ -38,21 +38,17 @@ const result = document.getElementById("result");
 
 if (button && user_input && result) {
     button.addEventListener("click", () => {
-
         const query = user_input.value.trim();
         if (!query) {
             result.textContent = "Please enter a song name";
             return;
         }
-
         const songs = loadSongs();
         if (!songs.length) {
             result.textContent = "Song list is empty";
             return;
         }
-
         const song_index = songs.findIndex(song => song.toLowerCase().includes(query.toLowerCase()));
-
         if (song_index === -1) {
             result.textContent = "Song not found in the collection";
         } else {
