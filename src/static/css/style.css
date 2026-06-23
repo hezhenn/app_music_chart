@@ -1,0 +1,197 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9efff 40%, #f7f0ff 100%);
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+}
+
+h1 {
+    color: #1f2937;
+    font-size: 44px;
+    margin: 18px 0 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+    padding: 0 12px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 92px;
+    height: 5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    opacity: 0.9;
+}
+
+p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"] {
+    padding: 12px 14px;
+    width: min(360px, 92vw);
+    font-size: 16px;
+    border: 1px solid rgba(31, 41, 55, 0.18);
+    border-radius: 12px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+}
+
+input[type="text"]:focus {
+    border-color: rgba(102, 126, 234, 0.75);
+    box-shadow: 0 10px 28px rgba(102, 126, 234, 0.18);
+}
+
+button {
+    padding: 12px 22px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 10px 26px rgba(102, 126, 234, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(102, 126, 234, 0.45);
+    filter: brightness(1.02);
+}
+
+#result {
+    font-size: 18px;
+    color: #28a745;
+    margin-top: 20px;
+}
+
+.song-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    text-align: left;
+}
+
+.song-list li {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #007bff;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.song-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+nav {
+    margin-top: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    padding: 14px 34px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    display: inline-block;
+    box-shadow: 0 10px 26px rgba(34, 197, 94, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(34, 197, 94, 0.36);
+    filter: brightness(1.03);
+}
+
+.song-list li {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: darkblue;
+    padding: 15px 20px;
+    margin-right: 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
+    line-height: 1.35;
+    letter-spacing: 0.2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.song-list li::before {
+    content: "🎵";
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.song-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.song-list li:nth-child(4n+1) {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.song-list li:nth-child(4n+2) {
+    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.song-list li:nth-child(4n+3) {
+    background: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%);
+}
+
+.song-list li:nth-child(4n+4) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.song-list li {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
